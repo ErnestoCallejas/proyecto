@@ -5,7 +5,7 @@
 Decidí aprovechar este proyecto para utilizarlo a futuro en la carrera que pienso estudiar.
 Por el momento, decidí realizar un programa que me regrese el nombre del insecto que está infectando a la planta. Este programa se usaría en la carrera de agronomía, la cual es la carrera que tengo pensado estudiar. 
 El programa sería de gran utilidad al momento de dar un diagnóstico y tratamiento del cultivo infectado, facilitando y acelerando el proceso para el tratamiento del cultivo.
-El programa arrojaría el resultado gracias a una serie de preguntas que se le mostraían al usuario, las cuales estarían seguidas de un condicional dentro del programa, el cual determinaría la siguiente pregunta.
+El programa arrojaría el resultado gracias a una serie de preguntas que se le mostraían al usuario, las cuales estarían seguidas de un condicional dentro del programa, el cual determinaría la siguiente pregunta. Tambíen se calcularía un porcentaje de infección, esto según las preguntas lanzadas.
 
 ## Algoritmo:
 
