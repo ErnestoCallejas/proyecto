@@ -1,3 +1,4 @@
+#En este programa no agrego los "else", lo dejé directo con el fin de mostrar el modo de trabajar del programa, finalizando rápido para mostrar como se calcula el porcentaje#
 insect_1=("bacteria")
 insect_2=("virus")
 insect_3=("larba")
