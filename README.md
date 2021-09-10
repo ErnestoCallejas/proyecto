@@ -7,6 +7,8 @@ Por el momento, decidí realizar un programa que me regrese el nombre del insect
 El programa sería de gran utilidad al momento de dar un diagnóstico y tratamiento del cultivo infectado, facilitando y acelerando el proceso para el tratamiento del cultivo.
 El programa arrojaría el resultado gracias a una serie de preguntas que se le mostraían al usuario, las cuales estarían seguidas de un condicional dentro del programa, el cual determinaría la siguiente pregunta. Tambíen se calcularía un porcentaje de infección, esto según las preguntas lanzadas.
 
+El programa responde bajo preguntas de "si" y "no" únicamente.
+
 ## Algoritmo:
 
 E0: (insecto_1,insecto_2,insecto_3)
