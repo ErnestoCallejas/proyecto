@@ -1,8 +1,7 @@
 #Este es el programa con la correción del error de la entrega pasada, los condicionales siguen igual ya que estos si funcionaban.#
 #Las preguntas se responden mediante si y no, para la pregunta de la escala si se usan valores numéricos#
 
-insect_1=("bacteria")
-insect_2=("virus")
+plaga=["Virus","Bacteria"]
 puntos_iniciales=0
 
 def cant_puntos1(respuesta_usuario,respuesta_esperada,puntos_iniciales):
@@ -29,6 +28,7 @@ def cant_puntos3(respuesta_usuario,respuesta_esperada,puntos_b):
 def porcentaje(pregunta5,num1,num2):
     valor=((pregunta5*100)/5)
     return valor
+
 
 pregunta1=str(input("¿las hojas tienen hoyos?  "))
 
@@ -84,7 +84,7 @@ elif pregunta3=="no":
     
 suma_puntos=cant_puntos1(pregunta1,"si",puntos_iniciales)+cant_puntos2(pregunta2,"si",cant_puntos1(pregunta1,"si",puntos_iniciales))+cant_puntos3(pregunta3,"si",cant_puntos2(pregunta2,"si",(cant_puntos1(pregunta1,"si",puntos_iniciales))))
 if suma_puntos==2:
-    print("tu planta tiene: ",insect_1,)
+    print("tu planta tiene: ",plaga[0],)
 else:
-    print("tu planta tiene: ",insect_2,",con un porcentaje de daño en hojas del ",porcentaje(pregunta5,100,5),"%")
+    print("tu planta tiene: ",plaga[1],",con un porcentaje de daño en hojas del ",porcentaje(pregunta5,100,5),"%")
    
