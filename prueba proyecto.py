@@ -1,9 +1,17 @@
 #Este es el programa con la correción del error de la entrega pasada, los condicionales siguen igual ya que estos si funcionaban.#
 #Las preguntas se responden mediante si y no, para la pregunta de la escala si se usan valores numéricos#
 
-plaga=["Virus","Bacteria"]
+plaga={"Virus":[3],"Bacteria":[1]}
 puntos_iniciales=0
 
+def plaga_r (lista,suma_puntos):
+    for clave,valor in lista.items():
+        if valor[0]==suma_puntos:
+            print(clave[0])
+        elif suma_puntos<valor[0]:
+            print(clave[0])
+    return clave
+        
 def cant_puntos1(respuesta_usuario,respuesta_esperada,puntos_iniciales):
     if pregunta1=="si":
         puntos_a=puntos_iniciales+1
@@ -63,7 +71,7 @@ elif pregunta2=="no":
         
 if pregunta3=="si":
     pregunta4=str(input("¿sus hojas tienen manchas?  "))
-    while pregunta4!="si" or pregunta4!="si":
+    while pregunta4!="si" and pregunta4!="no":
         print("Respuesta no válida, intente de nuevo")
         pregunta4=str(input("¿sus hojas tienen manchas?  "))
 
@@ -83,8 +91,7 @@ elif pregunta3=="no":
     suma_puntos=cant_puntos1(pregunta1,"si",puntos_iniciales)+cant_puntos2(pregunta2,"si",cant_puntos1(pregunta1,"si",puntos_iniciales))+cant_puntos3(pregunta3,"si",cant_puntos2(pregunta2,"si",(cant_puntos1(pregunta1,"si",puntos_iniciales))))
     
 suma_puntos=cant_puntos1(pregunta1,"si",puntos_iniciales)+cant_puntos2(pregunta2,"si",cant_puntos1(pregunta1,"si",puntos_iniciales))+cant_puntos3(pregunta3,"si",cant_puntos2(pregunta2,"si",(cant_puntos1(pregunta1,"si",puntos_iniciales))))
-if suma_puntos==2:
-    print("tu planta tiene: ",plaga[0],)
-else:
-    print("tu planta tiene: ",plaga[1],",con un porcentaje de daño en hojas del ",porcentaje(pregunta5,100,5),"%")
+
+print("tu planta tiene: ",plaga_r(plaga,suma_puntos),",con un porcentaje de daño en hojas del ",porcentaje(pregunta5,100,5),"%")
+
    
