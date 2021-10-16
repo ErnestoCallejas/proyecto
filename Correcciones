@@ -1,0 +1,10 @@
+Subcompetencia:
+  Separa el código en funciones pequeñas reusables, haciendo uso correcto de paso por parametros y return (avance 2)
+Error original:
+  Al momento de mandar a llamar la función en una suma, no le pasaba las variables a las funciones, por lo que me daba error
+Cambio realizado: 
+  Agregué las variables a las funciones, de modo que pude continuar aplicando la suma para más cosas.
+Líneas de código donde se ve la corrección:
+  Los cambios en las sumas se aprecian en las líneas 79, 83 y 85
+
+
