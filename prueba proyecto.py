@@ -1,92 +1,156 @@
-#Este es el programa con la correción del error de la entrega pasada, los condicionales siguen igual ya que estos si funcionaban.#
-#Las preguntas se responden mediante si y no, para la pregunta de la escala si se usan valores numéricos#
+"""
+Proyecto en Python.
+Análisis de enfermedad en plantas.
+El programa realiza una serie de preguntas al usuario,
+el cual puede contestar mediante si y no.
+El programa acumula los puntos de cada pregunta.
+Al final, el programa devuelve un posible agente
+de infección, además de un porcentaje de
+infección, dependiendo del caso.
+"""
 
 plaga=["Bacteria","Virus"]
 puntos_iniciales=0
-        
-def cant_puntos1(respuesta_usuario,respuesta_esperada,puntos_iniciales):
-    if pregunta1=="si":
+
+"""
+====================Funciones acumuladoras de puntos=============================
+"""   
+   
+def cant_puntos_1(respuesta_usuario,respuesta_esperada,puntos_iniciales):
+    """Acumula los puntos registrados. Si la primera
+    respuesta es afirmativa, va
+    a sumar un punto a los puntos iniciales."""
+    if pregunta_1=="si":
         puntos_a=puntos_iniciales+1
     else:
         puntos_a=puntos_iniciales+0
     return puntos_a
 
-def cant_puntos2(respuesta_usuario,respuesta_esperada,puntos_a):
-    if pregunta2=="si":
-        puntos_b=cant_puntos1(pregunta1,"si",puntos_iniciales)+1
+def cant_puntos_2(respuesta_usuario,respuesta_esperada,puntos_a):
+    """Acumula los puntos obtenidos hasta la pregunta 2.
+    Si la segunda respuesta es afirmativa, suma puntos
+    a los puntos obtenidos de la función anterior."""
+    if pregunta_2=="si":
+        puntos_b=cant_puntos_1(pregunta_1,"si",puntos_iniciales)+1
     else:
-        puntos_b=cant_puntos1(pregunta1,"si",puntos_iniciales)+0
+        puntos_b=cant_puntos_1(pregunta_1,"si",puntos_iniciales)+0
     return puntos_b
 
-def cant_puntos3(respuesta_usuario,respuesta_esperada,puntos_b):
-    if pregunta3=="si":
-        puntos_c=cant_puntos2(pregunta2,"si",cant_puntos1(pregunta1,"si",puntos_iniciales))+1
+def cant_puntos_3(respuesta_usuario,respuesta_esperada,puntos_b):
+    """Acumula los puntos obtenidos hasta la pregunta 3.
+    Si la tercera respuesta es afirmativa, se suma
+    un punto a los puntos obtenidos en la función anterior."""
+    if pregunta_3=="si":
+        puntos_c=cant_puntos_2(pregunta_2,\
+                               "si",cant_puntos_1 \
+                               (pregunta_1,"si",puntos_iniciales))+1
     else:
-        puntos_c=cant_puntos2(pregunta2,"si",cant_puntos1(pregunta1,"si",puntos_iniciales))+0
+        puntos_c=cant_puntos_2 \
+                  (pregunta_2,"si",cant_puntos_1 \
+                   (pregunta_1,"si",puntos_iniciales))+0
     return puntos_c
 
-def porcentaje(pregunta5,num1,num2):
-    valor=((pregunta5*100)/5)
+"""
+====================Función de porcentaje=============================
+
+"""
+def porcentaje(pregunta_5,num_1,num_2):
+    """Obtiene el porcentaje de infección
+    en las hojas de las plantas."""
+    valor=((pregunta_5*100)/5)
     return valor
 
+"""
+====================Parte principal del programa=============================
 
-pregunta1=str(input("¿las hojas tienen hoyos?  "))
+"""
 
-while pregunta1!="si" and pregunta1!="no":
+pregunta_1=str(input("¿las hojas tienen hoyos?  "))
+
+while pregunta_1!="si" and pregunta_1!="no":
     print("Respuesta no válida, intente de nuevo")
-    pregunta1=str(input("¿las hojas tienen hoyos?  "))
+    pregunta_1=str(input("¿las hojas tienen hoyos?  "))
 
-if pregunta1=="si":
-    pregunta2=str(input("¿la planta está caida?  "))
+if pregunta_1=="si":
+    pregunta_2=str(input("¿la planta está caida?  "))
     
-    while pregunta2!="si" and pregunta2!="no":
+    while pregunta_2!="si" and pregunta_2!="no":
         print("Respuesta no válida, intente de nuevo")
-        pregunta2=str(input("¿la planta está caida?   "))
+        pregunta_2=str(input("¿la planta está caida?   "))
     
-elif pregunta1=="no":
-    pregunta2=str(input("¿la planta está caída?  "))
-    while pregunta2!="si" and pregunta2!="no":
+elif pregunta_1=="no":
+    pregunta_2=str(input("¿la planta está caída?  "))
+    while pregunta_2!="si" and pregunta_2!="no":
         print("Respuesta no válida, intente de nuevo")
         pregunta2=str(input("¿la planta está caida?    "))
 
-if pregunta2=="si":
-    pregunta3=str(input("¿la planta tiene bolas en la raíz?  "))
-    while pregunta3!="si" and pregunta3!="no":
+if pregunta_2=="si":
+    pregunta_3=str(input("¿la planta tiene bolas en la raíz?  "))
+    while pregunta_3!="si" and pregunta_3!="no":
         print("Respuesta no válida, intente de nuevo")
-        pregunta3=str(input("¿la planta tiene bolas en la raíz? "))
+        pregunta_3=str(input("¿la planta tiene bolas en la raíz? "))
 
-elif pregunta2=="no":
-    pregunta3=str(input("¿¿la planta tiene bolas en la raíz?  "))
-    while pregunta3!="si" and pregunta3!="no":
+elif pregunta_2=="no":
+    pregunta_3=str(input("¿¿la planta tiene bolas en la raíz?  "))
+    while pregunta_3!="si" and pregunta_3!="no":
         print("Respuesta no válida, intente de nuevo")
-        pregunta3=str(input("¿la planta tiene bolas en la raíz? "))
+        pregunta_3=str(input("¿la planta tiene bolas en la raíz? "))
         
-if pregunta3=="si":
-    pregunta4=str(input("¿sus hojas tienen manchas?  "))
-    while pregunta4!="si" and pregunta4!="no":
+if pregunta_3=="si":
+    pregunta_4=str(input("¿sus hojas tienen manchas?  "))
+    while pregunta_4!="si" and pregunta_4!="no":
         print("Respuesta no válida, intente de nuevo")
-        pregunta4=str(input("¿sus hojas tienen manchas?  "))
+        pregunta_4=str(input("¿sus hojas tienen manchas?  "))
 
-    if pregunta4=="si":
-        pregunta5=float(input("En una escala del 1 al 5, donde 5 son todas las hojas y 0 ninguna ¿Cuantas hojas tienen manchas? "))
-        while pregunta5>5:
+    if pregunta_4=="si":
+        pregunta_5=float\
+                    (input(\
+                        "En una escala del 1 al 5," \
+                        " donde 5 son todas las hojas y 0 ninguna"\
+                        " ¿Cuantas hojas tienen manchas? "))
+        while pregunta_5>5:
             print("Respuesta no válida, intente de nuevo")
-            pregunta5=float(input("En una escala del 1 al 5, donde 5 son todas las hojas y 0 ninguna ¿Cuantas hojas tienen manchas? "))
+            pregunta_5=float\
+                        (input(\
+                            "En una escala del 1 al 5,"\
+                              " donde 5 son todas las hojas y 0 ninguna"\
+                              " ¿Cuantas hojas tienen manchas? "))
 
-    elif pregunta4=="no":
-        pregunta5=0
+    elif pregunta_4=="no":
+        pregunta_5=0
     else:
-       suma_puntos=cant_puntos1(pregunta1,"si",puntos_iniciales)+cant_puntos2(pregunta2,"si",cant_puntos1(pregunta1,"si",puntos_iniciales))+cant_puntos3(pregunta3,"si",cant_puntos2(pregunta2,"si",(cant_puntos1(pregunta1,"si",puntos_iniciales))))
+        suma_puntos=cant_puntos_1 \
+                    (pregunta_1,"si",puntos_iniciales)+cant_puntos2 \
+                    (pregunta_2,"si",cant_puntos1 \
+                     (pregunta_1,"si",puntos_iniciales))+cant_puntos_3 \
+                     (pregunta_3,"si",cant_puntos_2 \
+                      (pregunta_2,"si",(cant_puntos_1 \
+                                        (pregunta_1,"si",puntos_iniciales))))
 
-elif pregunta3=="no":
-    pregunta5=0
-    suma_puntos=cant_puntos1(pregunta1,"si",puntos_iniciales)+cant_puntos2(pregunta2,"si",cant_puntos1(pregunta1,"si",puntos_iniciales))+cant_puntos3(pregunta3,"si",cant_puntos2(pregunta2,"si",(cant_puntos1(pregunta1,"si",puntos_iniciales))))
+elif pregunta_3=="no":
+    pregunta_5=0
+    suma_puntos=cant_puntos_1 \
+                 (pregunta_1,"si",puntos_iniciales)+cant_puntos_2 \
+                 (pregunta_2,"si",cant_puntos_1 \
+                  (pregunta_1,"si",puntos_iniciales))+cant_puntos_3 \
+                  (pregunta_3,"si",cant_puntos_2 \
+                   (pregunta_2,"si",(cant_puntos_1 \
+                                     (pregunta_1,"si",puntos_iniciales))))
     
-suma_puntos=cant_puntos1(pregunta1,"si",puntos_iniciales)+cant_puntos2(pregunta2,"si",cant_puntos1(pregunta1,"si",puntos_iniciales))+cant_puntos3(pregunta3,"si",cant_puntos2(pregunta2,"si",(cant_puntos1(pregunta1,"si",puntos_iniciales))))
+    
+suma_puntos=cant_puntos_1 \
+             (pregunta_1,"si",puntos_iniciales)+cant_puntos_2 \
+             (pregunta_2,"si",cant_puntos_1 \
+              (pregunta_1,"si",puntos_iniciales))+cant_puntos_3 \
+              (pregunta_3,"si",cant_puntos_2 \
+               (pregunta_2,"si",(cant_puntos_1 \
+                                 (pregunta_1,"si",puntos_iniciales))))
 
-if suma_puntos>=2:
+if suma_puntos==2:
     print("Tu planta tiene: ",plaga[0])
 else:
-    print("tu planta tiene: ",plaga[1],",con un porcentaje de daño en hojas del ",porcentaje(pregunta5,100,5),"%")
+    print("tu planta tiene: ",plaga[1],\
+          ",con un porcentaje de daño en hojas del ",\
+          porcentaje(pregunta_5,100,5),"%")
 
    
